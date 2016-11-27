@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:title" content="Hearthstone.cards.plot() &middot; The Obtuse Triangle ">
+        <meta property="og:title" content="Tricks and Frags &middot; The Obtuse Triangle ">
         <meta property="og:site_name" content="The Obtuse Triangle"/>
         <meta property="og:description" content="Programming Blog of Ewan Breakey">
-        <meta property="og:url" content="https://retroverse.github.io/Obtuse-Triangle/site/article/hearthstone.cards.plot/" />
+        <meta property="og:url" content="https://retroverse.github.io/Obtuse-Triangle/site/article/tricks-and-frags/" />
         <meta property="og:locale" content="en-us">
         <meta name="author" content="Ewan Breakey">
         <meta name="description" content="Programming Blog of Ewan Breakey">
@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="/Obtuse-Triangle/site/css/highlight-9.0.0-default.min.css">
         <title>
             
-                Hearthstone.cards.plot() &middot; The Obtuse Triangle
+                Tricks and Frags &middot; The Obtuse Triangle
             
         </title>
     </head>
@@ -30,7 +30,7 @@
                     <ul><li><a href="https://retroverse.github.io/Obtuse-Triangle/site/">home</a></li></ul>
                 </nav>
                 
-                    <h1 class="post-title">Hearthstone.cards.plot()</h1>
+                    <h1 class="post-title">Tricks and Frags</h1>
                     <aside>
                         <p>by <strong>Ewan Breakey</strong> on <strong>Thu, Oct 27, 2016</strong></p>
                     </aside>
@@ -38,30 +38,19 @@
             </header>
 
 <article class="article-content">
-    <p>I have been enjoying Hearthstone&rsquo;s new Content <strong>&lsquo;Whispers of the Old Gods&rsquo;</strong> and the thought occurred to me while trying to find the optimum mana curve
-for my deck, what would the curve look like for the entirety of the game? Rather than doing a boring looking bar chart like the one Blizzard gives
-us, I sought to make something different and here it is.</p>
+    <p>The need for a single but dynamic end goal has driven game designers to incorporate an abstract score mechanic into their games for decades.</p>
 
-<p><img src="img/hthplot/plot.png" alt="Hearthstone Plot" /></p>
+<p>But in reality what kind of real game represents the skill level of its players as a single value? There is a difference though between multiple stats which are woven into a final result; but often these still fall into the trap of being a &ldquo;score&rdquo; or a &ldquo;rank&rdquo;.</p>
 
-<p>The program first makes an AJAX (Asynchronous JavaScript And XML) request using jquery to the lovely <strong>api.hearthstonejson.com</strong> and asks for the
-English version of the latest cards that people can use (there are cards which are internal and unused).</p>
+<p>Imagine instead if we could have a less abstract scoring system. As we know games benefit in other ways from not abstracting concepts, for instance; not showing a health bar and instead, negatively impacting play. (i.e making the screen go red)</p>
 
-<p>This returns a JSON (JavaScript Object Notation) file which is parsed into an array of cards.
-So to recap, we ask them for all the cards and they give them to us in an array.</p>
+<p>For instance if you were making an infinite runner (note that if you were making an arcade game, it would be completely valid to have a score) we could label your &ldquo;score&rdquo; a &ldquo;distance&rdquo; instead.</p>
 
-<p>We now create another array which keeps track of how many cards fall into the same slot on the graph (so we can make different coloured circles)</p>
+<p>In the case of Chrome&rsquo;s Dino game the &ldquo;score&rdquo; has no label at all, and this leaves determining the meaning of the &ldquo;score&rdquo; up to the player.</p>
 
-<p>We now using JSGMF (my JavaScript Framework) to create a canvas and initialize it before drawing all cards to it based on their cost and
-health/attack (or power/strength if you are an MTG person).</p>
+<p><a href="/img/dino-run.png">!Dino Run</a></p>
 
-<p>The user of the graph can zoom in, change the size of the circles and hide parts of the graph to their liking.</p>
-
-<p><img src="img/hthplot/controls.png" alt="Hearthstone Plot" /></p>
-
-<p>If you are interested go check it out, here is a link to download a .zip of the website.</p>
-
-<p>Signing Out,</p>
+<p>Well, that&rsquo;s just what I think and honestly I have labelled or implied things as scores in my games anyway, so just do what works well in your game and don&rsquo;t follow cliches if they don&rsquo;t fit your game,</p>
 
 <p>-Ewan</p>
 

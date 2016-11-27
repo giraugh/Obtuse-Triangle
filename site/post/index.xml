@@ -27,18 +27,113 @@ I&amp;rsquo;ll be slowly migrating the posts&amp;rsquo;s over so probably no new
     </item>
     
     <item>
+      <title>Why Walk When We Would Win?</title>
+      <link>https://retroverse.github.io/Obtuse-Triangle/site/article/why-walk-when-we-would-win/</link>
+      <pubDate>Thu, 27 Oct 2016 12:30:28 +1100</pubDate>
+      
+      <guid>https://retroverse.github.io/Obtuse-Triangle/site/article/why-walk-when-we-would-win/</guid>
+      <description>
+
+&lt;p&gt;To be honest the title is a bit misleading, it should really be &lt;em&gt;“Why walk when you could fly?”&lt;/em&gt;, I was just going for the alliteration. When creating things we can fall into the trap of using what works best for us and what when we sit down to work, we start doing.&lt;/p&gt;
+
+&lt;p&gt;For me this was Game-Maker, and don’t get me wrong; I really like Game-Maker, but it has its flaws (especially when making certain types of games). Normally I just put up with it and keep working away but recently I hit a wall, a very annoying wall. I had just finished up a tileset for a new project when I realised that if I wanted certain tiles to be solid, I would have to split each tile into its own sprite and at the time I had over 45 tiles. I then though to myself “Why don’t I just use a different engine?” and so I did.&lt;/p&gt;
+
+&lt;h2 id=&#34;unity-c-javascript&#34;&gt;Unity (C#/Javascript)&lt;/h2&gt;
+
+&lt;p&gt;First engine to try was Unity, and it worked out alright except when it came to simple things like animations. At the time I was using (and still am tbh) some placeholder art from Nuclear throne and I had a single run animation which I wanted to pause when I stopped moving. Unity required (even in 2d) for every object with animation to have a state machine and I COULD NOT for the life of me get it to have a state which just paused the animation or even just went back to the first frame. The only alternatives it seemed was for me to make my own animation system or to use something from the Asset Store (and I wasn’t keen on spending money just to get around this problem)&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;For those who do want to use unity and are having the same difficulty, Powerhoof recently unveiled &lt;a href=&#34;https://www.assetstore.unity3d.com/en/#!/content/71177&#34;&gt;a tool&lt;/a&gt; which helps with this exact problem, unfortunately it costs $10.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;unreal-c&#34;&gt;Unreal (C++)&lt;/h2&gt;
+
+&lt;p&gt;Unreal was my next stop, for some reason I kept going to 3d engines, I was hoping that this one was gonna be good and I didn’t stop to check if it supported 2d, short answer: no.&lt;/p&gt;
+
+&lt;h2 id=&#34;mono-game-c&#34;&gt;Mono-Game (C#)&lt;/h2&gt;
+
+&lt;p&gt;I was really impressed with MG in nearly every way…except its resource management. It required you to create resource packs for use within the game and it seemed it wouldn’t be bad if you could get its pipeline editor too work, which for some reason wasn’t included with my installation and I also couldn’t find a binary for it and would have to had built it myself. Either way, I had already started something else by this point which was going better so I gave up on MG.&lt;/p&gt;
+
+&lt;h2 id=&#34;löve2d-lua&#34;&gt;LÖVE2D (Lua)&lt;/h2&gt;
+
+&lt;p&gt;Love was quite a breath of fresh air from the other engines, it didn’t get in your way and screw stuff up and it also provided lots of functionality, and what it didn’t provide, &lt;a href=&#34;https://github.com/love2d-community/awesome-love2d&#34;&gt;the community did&lt;/a&gt;. However Love uses Lua, which despite some really cool tables and good ideas with metatables, has a really weird syntax and a distinct lack of classes.
+&lt;em&gt;(note that there are ways of adding classes through &lt;a href=&#34;https://github.com/love2d-community/awesome-love2d#helper-libraries&#34;&gt;external packages&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;That was when I found Moon-Script, a precompiler for lua which adds classes and coffeescript’esque syntax (significant white space e.t.c.). This was a big breakthrough, yet it didn’t solve all my problems with Lua (and it also introduced &lt;a href=&#34;https://github.com/leafo/moonscript/issues/14&#34;&gt;some&lt;/a&gt; &lt;a href=&#34;https://github.com/leafo/moonscript/issues/35&#34;&gt;more&lt;/a&gt;). For this reason I set out to create a precompiler for Moon-Script which would add some nice features and syntax changes which i desired.&lt;/p&gt;
+
+&lt;p&gt;And so, &lt;a href=&#34;https://github.com/retroverse/MoonShine&#34;&gt;Moon-Shine&lt;/a&gt; was born. In an effort to try something new it was written in Go and didn’t use a lexer/parser and instead entirely relied on Regular Expressions.
+&lt;em&gt;(Yes I do know that regular expressions are not as fast, but the language is very minimal and writing a lexer/parser wouldn’t make it much faster and would have just taken me longer to write)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-next-trial&#34;&gt;The Next Trial&lt;/h2&gt;
+
+&lt;p&gt;Ah, this game wasn’t gonna just start working for me, next hurdle: A level editor. I checked out some level editors such as Tiled and decided they were overly complex/not a good fit for my game and decided to put one together instead . I had actually made &lt;a href=&#34;http://tdos.itch.io/chivalry&#34;&gt;a level editor before&lt;/a&gt; but it was very much integrated into Game-Maker so I had to start from scratch.&lt;/p&gt;
+
+&lt;p&gt;I decided to make it in C# &lt;em&gt;(Making up for not using Unity :D)&lt;/em&gt; and try to make it as general as possible in order to not get a repeat of last time. In order for it to be easily reusable it had to be able to load run time data (so you don’t have to build it from source) and so I opted to use YAML for my data as it was nice and human readable.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;img/why-walk/yaml.gif&#34;&gt;!Yaml Data File&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Unfortunately loading YAML in C# wasn’t as easy as expected (that’s a story for another day) but I pushed through and put together Lime-Editor (Lime being the game).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;img/why-walk/editor.gif&#34;&gt;!Lime-Editor in action&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;So, when making your games or projects or whatever you do, remember (and I will try too) not to struggle on if your tools aren’t working with you and if you can’t find tools that do, make your own. Good luck!
+-Ewan&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tricks and Frags</title>
+      <link>https://retroverse.github.io/Obtuse-Triangle/site/article/tricks-and-frags/</link>
+      <pubDate>Thu, 27 Oct 2016 12:27:53 +1100</pubDate>
+      
+      <guid>https://retroverse.github.io/Obtuse-Triangle/site/article/tricks-and-frags/</guid>
+      <description>&lt;p&gt;The need for a single but dynamic end goal has driven game designers to incorporate an abstract score mechanic into their games for decades.&lt;/p&gt;
+
+&lt;p&gt;But in reality what kind of real game represents the skill level of its players as a single value? There is a difference though between multiple stats which are woven into a final result; but often these still fall into the trap of being a &amp;ldquo;score&amp;rdquo; or a &amp;ldquo;rank&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Imagine instead if we could have a less abstract scoring system. As we know games benefit in other ways from not abstracting concepts, for instance; not showing a health bar and instead, negatively impacting play. (i.e making the screen go red)&lt;/p&gt;
+
+&lt;p&gt;For instance if you were making an infinite runner (note that if you were making an arcade game, it would be completely valid to have a score) we could label your &amp;ldquo;score&amp;rdquo; a &amp;ldquo;distance&amp;rdquo; instead.&lt;/p&gt;
+
+&lt;p&gt;In the case of Chrome&amp;rsquo;s Dino game the &amp;ldquo;score&amp;rdquo; has no label at all, and this leaves determining the meaning of the &amp;ldquo;score&amp;rdquo; up to the player.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://retroverse.github.io/Obtuse-Triangle/site/img/dino-run.png&#34;&gt;!Dino Run&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Well, that&amp;rsquo;s just what I think and honestly I have labelled or implied things as scores in my games anyway, so just do what works well in your game and don&amp;rsquo;t follow cliches if they don&amp;rsquo;t fit your game,&lt;/p&gt;
+
+&lt;p&gt;-Ewan&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Droid Shop</title>
+      <link>https://retroverse.github.io/Obtuse-Triangle/site/article/droid-shop/</link>
+      <pubDate>Thu, 27 Oct 2016 12:25:09 +1100</pubDate>
+      
+      <guid>https://retroverse.github.io/Obtuse-Triangle/site/article/droid-shop/</guid>
+      <description>&lt;p&gt;&lt;em&gt;I recently started releasing apps on the play store after a long time of only using itch.io for android releases.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Android is great for people getting into app development but their distribution platforms dont have quite the reach or popularity as IOS.&lt;/p&gt;
+
+&lt;p&gt;What android does well is allow for the quick, easy and relatively cheap submission of apps to its App Store; the Play Store, and while this creates an environment filled with crappy games and money making schemes remiscent of a million dollar homepage, it also provides a space for new app developers to quickly get started. As a new developer on android however i have noticed that, due to the high amount of game submissions, my game gets little attention outside of those who find out about it through my social media. Itch.io &amp;amp; Steam however both provide a place which quickly shows off new releases which helps to get a couple of people looking at your app&lt;/p&gt;
+
+&lt;p&gt;I also get many many more views than downloads as compared to itch.io. I reckon this is due to the amount of effort required to install them and the average quality produced by doing so. You can only download so many shit games before you start being a bit careful with your time and internet access.&lt;/p&gt;
+
+&lt;p&gt;-Ewan&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hearthstone.cards.plot()</title>
       <link>https://retroverse.github.io/Obtuse-Triangle/site/article/hearthstone.cards.plot/</link>
       <pubDate>Thu, 27 Oct 2016 11:34:22 +1100</pubDate>
       
       <guid>https://retroverse.github.io/Obtuse-Triangle/site/article/hearthstone.cards.plot/</guid>
-      <description>&lt;p&gt;I have been enjoying Hearthstone&amp;rsquo;s new Content Whispers of the Old Gods and the thought occurred to me while trying to find the optimum mana curve
+      <description>&lt;p&gt;I have been enjoying Hearthstone&amp;rsquo;s new Content &lt;strong&gt;&amp;lsquo;Whispers of the Old Gods&amp;rsquo;&lt;/strong&gt; and the thought occurred to me while trying to find the optimum mana curve
 for my deck, what would the curve look like for the entirety of the game? Rather than doing a boring looking bar chart like the one Blizzard gives
 us, I sought to make something different and here it is.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;img/hthplot/plot.png&#34; alt=&#34;Hearthstone Plot&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The program first makes an AJAX (Asynchronous JavaScript And XML) request using jquery to the lovely api.hearthstonejson.com and asks for the
+&lt;p&gt;The program first makes an AJAX (Asynchronous JavaScript And XML) request using jquery to the lovely &lt;strong&gt;api.hearthstonejson.com&lt;/strong&gt; and asks for the
 English version of the latest cards that people can use (there are cards which are internal and unused).&lt;/p&gt;
 
 &lt;p&gt;This returns a JSON (JavaScript Object Notation) file which is parsed into an array of cards.
