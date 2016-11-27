@@ -12,7 +12,7 @@
 .color-scheme-white header,
 .color-scheme-white footer {
     background-color: #ee4d4d;
-    color: white;
+    color: white !important;
 }
 
 .color-scheme-white a {
