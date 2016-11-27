@@ -1,7 +1,8 @@
-baseurl = "https://retroverse.github.io/Obtuse-Triangle/site/"
+baseurl = "https://retroverse.github.io\\Obtuse-Triangle\\site\\"
 title = "The Obtuse Triangle"
 languageCode = "en-us"
 publishDir = "../site"
+canonifyurls = true
 
 MetaDataFormat = "toml"
 theme = "slender"
