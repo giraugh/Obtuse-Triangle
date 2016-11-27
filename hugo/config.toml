@@ -5,7 +5,7 @@ publishDir = "../site"
 
 MetaDataFormat = "toml"
 theme = "slender"
-paginate = 3
+#paginate = 3
 PaginatePath = "/"
 
 [author]

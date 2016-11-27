@@ -143,35 +143,60 @@ I&rsquo;ll be slowly migrating the posts&rsquo;s over so probably no new posts f
         
     </article>
     
+    <article>
+        <h1 class="article-title"><a href="https://retroverse.github.io/Obtuse-Triangle/site/article/droid-shop/">Droid Shop</a></h1>
+        <p class="article-info">
+            on <strong>Thu, Oct 27, 2016</strong> by <strong>Ewan Breakey</strong> &middot; <strong>2 min reading time</strong>
+        </p>
+        <p class="article-summary"><p><em>I recently started releasing apps on the play store after a long time of only using itch.io for android releases.</em></p>
+
+<p>Android is great for people getting into app development but their distribution platforms dont have quite the reach or popularity as IOS.</p>
+
+<p>What android does well is allow for the quick, easy and relatively cheap submission of apps to its App Store; the Play Store, and while this creates an environment filled with crappy games and money making schemes remiscent of a million dollar homepage, it also provides a space for new app developers to quickly get started. As a new developer on android however i have noticed that, due to the high amount of game submissions, my game gets little attention outside of those who find out about it through my social media. Itch.io &amp; Steam however both provide a place which quickly shows off new releases which helps to get a couple of people looking at your app</p>
+
+<p>I also get many many more views than downloads as compared to itch.io. I reckon this is due to the amount of effort required to install them and the average quality produced by doing so. You can only download so many shit games before you start being a bit careful with your time and internet access.</p>
+
+<p>-Ewan</p>
+</p>
+        
+    </article>
+    
+    <article>
+        <h1 class="article-title"><a href="https://retroverse.github.io/Obtuse-Triangle/site/article/hearthstone.cards.plot/">Hearthstone.cards.plot()</a></h1>
+        <p class="article-info">
+            on <strong>Thu, Oct 27, 2016</strong> by <strong>Ewan Breakey</strong> &middot; <strong>2 min reading time</strong>
+        </p>
+        <p class="article-summary"><p>I have been enjoying Hearthstone&rsquo;s new Content <strong>&lsquo;Whispers of the Old Gods&rsquo;</strong> and the thought occurred to me while trying to find the optimum mana curve
+for my deck, what would the curve look like for the entirety of the game? Rather than doing a boring looking bar chart like the one Blizzard gives
+us, I sought to make something different and here it is.</p>
+
+<p><img src="img/hthplot/plot.png" alt="Hearthstone Plot" /></p>
+
+<p>The program first makes an AJAX (Asynchronous JavaScript And XML) request using jquery to the lovely <strong>api.hearthstonejson.com</strong> and asks for the
+English version of the latest cards that people can use (there are cards which are internal and unused).</p>
+
+<p>This returns a JSON (JavaScript Object Notation) file which is parsed into an array of cards.
+So to recap, we ask them for all the cards and they give them to us in an array.</p>
+
+<p>We now create another array which keeps track of how many cards fall into the same slot on the graph (so we can make different coloured circles)</p>
+
+<p>We now using JSGMF (my JavaScript Framework) to create a canvas and initialize it before drawing all cards to it based on their cost and
+health/attack (or power/strength if you are an MTG person).</p>
+
+<p>The user of the graph can zoom in, change the size of the circles and hide parts of the graph to their liking.</p>
+
+<p><img src="img/hthplot/controls.png" alt="Hearthstone Plot" /></p>
+
+<p>If you are interested go check it out, here is a link to download a .zip of the website.</p>
+
+<p>Signing Out,</p>
+
+<p>-Ewan</p>
+</p>
+        
+    </article>
     
     
-    <ul class="pagination">
-        
-        <li>
-            <a href="/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-        </li>
-        
-        <li
-        class="disabled">
-        <a href="" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-        </li>
-        
-        <li
-        class="active"><a href="/">1</a></li>
-        
-        <li
-        ><a href="/2/">2</a></li>
-        
-        <li
-        >
-        <a href="/2/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-        </li>
-        
-        <li>
-            <a href="/2/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-        </li>
-        
-    </ul>
     
 </section>
         </div>
