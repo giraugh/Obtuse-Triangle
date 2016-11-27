@@ -88,6 +88,10 @@ header p a .fa {
     padding-right: 10px;
 }
 
+i.fa:hover {
+    color: white;
+}
+
 /* Pagination */
 
 .pagination {
