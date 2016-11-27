@@ -42,8 +42,8 @@ PaginatePath = "/"
     # Social links, must be full URLs (e.g. https://github.com/CrimsonRay/).
     # Remove, comment, or leave blank any field to leave them out.
     email = "mailto:sheeplovedemocracy@gmail.com"
-    github = "github.com/retroverse"
-    twitter = "twitter.com/retr0verse"
+    github = "http://github.com/retroverse"
+    twitter = "http://twitter.com/retr0verse"
 
 [menu]
 
