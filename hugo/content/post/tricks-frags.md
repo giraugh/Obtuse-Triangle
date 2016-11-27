@@ -17,7 +17,7 @@ For instance if you were making an infinite runner (note that if you were making
 
 In the case of Chrome's Dino game the "score" has no label at all, and this leaves determining the meaning of the "score" up to the player.
 
-[!Dino Run](/img/dino-run.png)
+![Dino Run](/img/dino-run.png)
 
 Well, that's just what I think and honestly I have labelled or implied things as scores in my games anyway, so just do what works well in your game and don't follow cliches if they don't fit your game,
 

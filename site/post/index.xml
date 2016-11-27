@@ -68,11 +68,11 @@ I&amp;rsquo;ll be slowly migrating the posts&amp;rsquo;s over so probably no new
 
 &lt;p&gt;I decided to make it in C# &lt;em&gt;(Making up for not using Unity :D)&lt;/em&gt; and try to make it as general as possible in order to not get a repeat of last time. In order for it to be easily reusable it had to be able to load run time data (so you don’t have to build it from source) and so I opted to use YAML for my data as it was nice and human readable.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;img/why-walk/yaml.gif&#34;&gt;!Yaml Data File&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/why-walk/yaml.gif&#34; alt=&#34;Yaml Data File&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Unfortunately loading YAML in C# wasn’t as easy as expected (that’s a story for another day) but I pushed through and put together Lime-Editor (Lime being the game).&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;img/why-walk/editor.gif&#34;&gt;!Lime-Editor in action&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;img/why-walk/editor.gif&#34; alt=&#34;Lime-Editor in action&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;So, when making your games or projects or whatever you do, remember (and I will try too) not to struggle on if your tools aren’t working with you and if you can’t find tools that do, make your own. Good luck!
 -Ewan&lt;/p&gt;
@@ -95,7 +95,7 @@ I&amp;rsquo;ll be slowly migrating the posts&amp;rsquo;s over so probably no new
 
 &lt;p&gt;In the case of Chrome&amp;rsquo;s Dino game the &amp;ldquo;score&amp;rdquo; has no label at all, and this leaves determining the meaning of the &amp;ldquo;score&amp;rdquo; up to the player.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://retroverse.github.io/Obtuse-Triangle/site/img/dino-run.png&#34;&gt;!Dino Run&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://retroverse.github.io/Obtuse-Triangle/site/img/dino-run.png&#34; alt=&#34;Dino Run&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Well, that&amp;rsquo;s just what I think and honestly I have labelled or implied things as scores in my games anyway, so just do what works well in your game and don&amp;rsquo;t follow cliches if they don&amp;rsquo;t fit your game,&lt;/p&gt;
 
