@@ -1,6 +1,7 @@
 baseurl = "http://replace-this-with-your-hugo-site.com/"
 title = "The Obtuse Triangle"
 languageCode = "en-us"
+publishDir = "../site"
 
 MetaDataFormat = "toml"
 theme = "slender"
