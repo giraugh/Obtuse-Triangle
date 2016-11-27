@@ -26,5 +26,40 @@ I&amp;rsquo;ll be slowly migrating the posts&amp;rsquo;s over so probably no new
 </description>
     </item>
     
+    <item>
+      <title>Hearthstone.cards.plot()</title>
+      <link>https://retroverse.github.io/Obtuse-Triangle/site/article/hearthstone.cards.plot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://retroverse.github.io/Obtuse-Triangle/site/article/hearthstone.cards.plot/</guid>
+      <description>&lt;p&gt;I have been enjoying Hearthstone&amp;rsquo;s new Content Whispers of the Old Gods and the thought occurred to me while trying to find the optimum mana curve for my
+deck, what would the curve look like for the entirety of the game? Rather than doing a boring looking bar chart like the one Blizzard gives us, I sought to
+make something different and here it is.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/hthplot/plot.png&#34; alt=&#34;Hearthstone Plot&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The program first makes an AJAX (Asynchronous JavaScript And XML) request using jquery to the lovely api.hearthstonejson.com and asks for the English version
+of the latest cards that people can use (there are cards which are internal and unused).&lt;/p&gt;
+
+&lt;p&gt;This returns a JSON (JavaScript Object Notation) file which is parsed into an array of cards.
+So to recap, we ask them for all the cards and they give them to us in an array.&lt;/p&gt;
+
+&lt;p&gt;We now create another array which keeps track of how many cards fall into the same slot on the graph (so we can make different coloured circles)&lt;/p&gt;
+
+&lt;p&gt;We now using JSGMF (my JavaScript Framework) to create a canvas and initialize it before drawing all cards to it based on their cost and health/attack (or
+power/strength if you are an MTG person).&lt;/p&gt;
+
+&lt;p&gt;The user of the graph can zoom in, change the size of the circles and hide parts of the graph to their liking.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/hthplot/controls.png&#34; alt=&#34;Hearthstone Plot&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are interested go check it out, here is a link to download a .zip of the website.&lt;/p&gt;
+
+&lt;p&gt;Signing Out,&lt;/p&gt;
+
+&lt;p&gt;-Ewan&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
